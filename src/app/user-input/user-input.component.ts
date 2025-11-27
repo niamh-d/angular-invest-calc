@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { InvestmentService } from '../investment.service';
 
 @Component({
   selector: 'app-user-input',
@@ -13,11 +14,14 @@ export class UserInputComponent {
   expectedReturn = '5';
   duration = '10';
 
+  constructor(private investmentService: InvestmentService) {}
+
   onSubmit() {
-    console.log('Submitted');
-    console.log(this.initialInvestment);
-    console.log(this.annualContribution);
-    console.log(this.expectedReturn);
-    console.log(this.duration);
+    this.investmentService.calculateInvestmentResults({
+      initialInvestment: +this.initialInvestment,
+      annualContribution: +this.annualContribution,
+      expectedReturn: +this.expectedReturn,
+      duration: +this.duration,
+    });
   }
 }
