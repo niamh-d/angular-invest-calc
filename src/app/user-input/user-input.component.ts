@@ -9,10 +9,10 @@ import { InvestmentService } from '../investment.service';
   styleUrl: './user-input.component.css',
 })
 export class UserInputComponent {
-  initialInvestment = '0';
-  annualContribution = '0';
-  expectedReturn = '5';
-  duration = '10';
+  initialInvestment = '1000';
+  annualContribution = '500';
+  expectedReturn = '3';
+  duration = '5';
 
   constructor(private investmentService: InvestmentService) {}
 
