@@ -23,5 +23,10 @@ export class UserInputComponent {
       expectedReturn: +this.expectedReturn,
       duration: +this.duration,
     });
+
+    this.initialInvestment = '1000';
+    this.annualContribution = '500';
+    this.expectedReturn = '3';
+    this.duration = '5';
   }
 }
